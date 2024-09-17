@@ -1,11 +1,25 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/teste">Teste</router-link>
-  </nav>
+  <NavbarComponent />
+  <!-- <nav> -->
+  <!--   <router-link to="/">Home</router-link> | -->
+  <!--   <router-link to="/about">About</router-link> | -->
+  <!--   <router-link to="/teste">Teste</router-link> -->
+  <!-- </nav> -->
+  <!-- <router-view /> -->
   <router-view />
 </template>
+
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import NavbarComponent from "@/components/Home/NavbarComponent.vue";
+
+@Options({
+  components: {
+    NavbarComponent,
+  },
+})
+export default class App extends Vue {}
+</script>
 
 <style lang="scss">
 #app {

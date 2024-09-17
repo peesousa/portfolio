@@ -18,11 +18,79 @@ export default class HomeView extends Vue {}
 -->
 
 <template>
-  <div>
-    <h1>navbar</h1>
-  </div>
+  <NavbarComponent />
+  <MainContentComponent />
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import NavbarComponent from "@/components/Home/NavbarComponent.vue";
+import MainContentComponent from "@/components/Home/MainContentComponent.vue";
 
-<style scoped></style>
+@Options({
+  components: {
+    NavbarComponent,
+    MainContentComponent,
+  },
+})
+export default class HomeView extends Vue {}
+</script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  max-height: 100vh;
+}
+
+/*body {
+  background-image: url(assets/artifact.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur;
+}
+*/
+
+margin-helper {
+  margin-top: 1000px;
+}
+
+.vermelho {
+  color: white;
+}
+
+.nome {
+  font-family: "Poppins";
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.fonte {
+  font-family: "Poppins";
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.cor-navbar {
+  background-color: rgba(65, 105, 225, 0.5);
+  /*background-color: #4169e1;*/
+}
+
+.botao {
+  background-color: #4169e1;
+  font-family: "Poppins";
+  color: white;
+  text-decoration: none;
+}
+
+.botao:hover {
+  color: #000;
+  background-color: #fff;
+  transition: 300ms;
+}
+
+#sobrenome {
+  color: #4169e1;
+}
+</style>
