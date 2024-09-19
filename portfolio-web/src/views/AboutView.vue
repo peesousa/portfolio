@@ -1,5 +1,136 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <main class="d-flex align-items-center mt-5 my-auto">
+    <div class="container-fluid container-sm my-4">
+      <div class="row">
+        <div class="col-lg-5 text-center">
+          <img
+            src="@/assets/eu.jpeg"
+            class="rounded-5"
+            style="width: 300px; height: 300px"
+            alt=""
+          />
+        </div>
+
+        <div
+          class="col-lg-6 mt-lg-0 mt-5 align-items-center text-lg-start text-center me-1"
+        >
+          <h1 class="text-uppercase nome mb-2">
+            Pedro <span class="sobrenome">Sousa</span>
+          </h1>
+          <hr />
+          <p class="fonte mb-5">
+            Graduando em Ciência da Computação pelo Instituto Federal de
+            Brasília. Possui conhecimento em Desenvolvimeto Full-Stack com
+            tecnologias como Laravel, Spring Boot, Angular e Vue.Js, além de
+            conhecimento em banco de dados SQL e ferramentas de escritório como
+            Word e Excel.
+          </p>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Saiba mais!
+          </button>
+
+          <!-- Modal -->
+          <AboutModalController />
+        </div>
+      </div>
+    </div>
+  </main>
 </template>
+
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import AboutModalController from "@/components/About/ModalAboutController";
+
+@Options({
+  components: {
+    AboutModalController,
+  },
+})
+export default class AboutView extends Vue {}
+</script>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  max-height: 100vh;
+}
+
+/*body {
+  background-image: url(assets/artifact.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur;
+}
+*/
+
+margin-helper {
+  margin-top: 1000px;
+}
+
+.nome {
+  font-family: "Poppins";
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.small {
+  font-size: 10;
+  font-family: "Poppins";
+  font-weight: 200;
+  color: #fff;
+}
+
+.fonte {
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.fonte-modal {
+  font-family: "Poppins";
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.cor-navbar {
+  background-color: rgba(65, 105, 225, 0.5);
+  /*background-color: #4169e1;*/
+}
+
+.botao {
+  background-color: #4169e1;
+  font-family: "Poppins";
+  color: white;
+  text-decoration: none;
+}
+
+.botao:hover {
+  color: #000;
+  background-color: #fff;
+  transition: 300ms;
+}
+
+.linha-horizontal {
+  background-color: #4169e1;
+}
+
+.sobrenome,
+.texto-azul {
+  color: #4169e1;
+}
+
+.fundo-preto {
+  background-color: #000;
+}
+</style>

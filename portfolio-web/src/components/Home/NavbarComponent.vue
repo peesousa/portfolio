@@ -36,7 +36,7 @@
                 <router-link to="/" class="nav-link">Home</router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/sobre-mim" class="nav-link"
+                <router-link to="/about" class="nav-link"
                   >Sobre mim</router-link
                 >
               </li>
@@ -46,7 +46,7 @@
                 >
               </li>
               <li class="nav-item">
-                <router-link to="/contato" class="nav-link"
+                <router-link to="/contact" class="nav-link"
                   >Contato</router-link
                 >
               </li>
