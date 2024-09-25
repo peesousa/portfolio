@@ -1,73 +1,48 @@
 <template>
-  <div
-    class="modal fade fundo-preto"
-    id="exampleModal"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+  <div class="modal fade fundo-preto" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
       <div class="modal-content bg-dark">
         <div class="modal-header mb-4">
           <h1 class="modal-title fs-5 nome" id="exampleModalLabel">
             Pedro <span class="sobrenome">Sousa</span>
           </h1>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
-        <div class="modal-body bg-secondary">
-          <div class="row container">
+        <div class="modal-body">
+          <div class="row container-fluid">
             <div class="col-lg-4 col-12">
               <div class="sticky-top">
                 <div class="text-center">
-                  <img
-                    src="@/assets/eu.jpeg"
-                    style="width: 100px; height: 100px"
-                    class="rounded-5 mb-5"
-                    alt=""
-                  />
+                  <img src="@/assets/eu.jpeg" style="width: 100px; height: 100px" class="rounded-5 mb-5" alt="" />
                 </div>
                 <div class="align-items-start">
                   <p class="fonte-modal mb-1">
-                    <span class="texto-azul"
-                      ><i class="bi bi-calendar3 me-2"></i
-                    ></span>
+                    <span class="texto-azul"><i class="bi bi-calendar3 me-2"></i></span>
                     27/09/2002
                   </p>
                   <hr />
 
                   <p class="fonte-modal mb-1">
-                    <span class="texto-azul"
-                      ><i class="bi bi-geo-alt-fill me-2"></i
-                    ></span>
+                    <span class="texto-azul"><i class="bi bi-geo-alt-fill me-2"></i></span>
                     Brasília-DF, Brasil
                   </p>
                   <hr />
 
                   <p class="fonte-modal mb-1">
-                    <span class="texto-azul"
-                      ><i class="bi bi-telephone-fill me-2"></i
-                    ></span>
+                    <span class="texto-azul"><i class="bi bi-telephone-fill me-2"></i></span>
                     (61) 99969-9784
                   </p>
                   <hr />
 
                   <p class="fonte-modal mb-1">
-                    <span class="texto-azul"
-                      ><i class="bi bi-envelope-fill me-2"></i
-                    ></span>
+                    <span class="texto-azul"><i class="bi bi-envelope-fill me-2"></i></span>
                     Copiar E-mail
                   </p>
 
                   <hr />
-                  <button
-                    class="btn btn-primary rounded-5 mt-1 px-4 w-75 mb-5 mb-lg-0"
-                  >
+                  <button class="btn btn-primary rounded-5 mt-1 px-4 w-75 mb-5 mb-lg-0">
                     <i class="bi bi-download me-2"></i>
                     <span>Currículo</span>
                   </button>
@@ -97,27 +72,50 @@
                 </p>
               </div>
               <div class="mb-5">
-                <h3 class="text-uppercase">Serviços</h3>
+                <h3 class="text-uppercase">
+                  O que <span class="texto-azul">eu faço?</span>
+                </h3>
                 <hr />
                 <p>Atualmente eu presto os seguintes tipos de serviço:</p>
-                <ul>
-                  <li>serviço 1</li>
-                  <li>serviço 2</li>
-                  <li>serviço 3</li>
-                </ul>
+                <!-- <ul class="row"> -->
+                <!--   <li class="col-6"> -->
+                <!--      -->
+                <!--   </li> -->
+                <!--   <li class="col-6"> -->
+                <!--      -->
+                <!--   </li> -->
+                <!-- </ul> -->
+                <div class="row">
+                  <div class="col-6">
+                    <div class="card bg-dark">
+                      <img src="@/assets/eu.jpeg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <p class="card-text small">
+                          Desenvolvo aplicações Back-End com Laravel ou Spring
+                          Boot
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="card bg-dark">
+                      <img src="@/assets/eu.jpeg" class="card-img-top" alt="..." />
+                      <div class="card-body">
+                        <p class="card-text small">
+                          Faço implementações de interfaces baseados em um
+                          design
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="mb-5">
                 <h3 class="text-uppercase">
                   Minhas <span class="texto-azul">Skills</span>
                 </h3>
                 <hr />
-                <ul>
-                  <li>Laravel/ PHP</li>
-                  <li>Java</li>
-                  <li>Angular</li>
-                  <li>Vue.Js</li>
-                  <li>JavaScript</li>
-                </ul>
+                <ProgressBarComponent />
               </div>
 
               <div class="mb-5">
@@ -125,10 +123,7 @@
                   Trajetória <span class="texto-azul">Acadêmica</span>
                 </h3>
                 <hr />
-                <ul>
-                  <li>Centro de Ensino Médio Setor Leste</li>
-                  <li>Instituto Federal de Brasília</li>
-                </ul>
+                <TimelineComponent />
               </div>
 
               <div class="mb-5">
@@ -137,9 +132,7 @@
                   <span class="texto-azul">Profissional</span>
                 </h3>
                 <hr />
-                <ul>
-                  <li>Advice Tecnologia</li>
-                </ul>
+                <TimelineComponent />
               </div>
             </div>
           </div>
@@ -152,9 +145,17 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: "ModalAboutController",
-};
+import { Options, Vue } from "vue-class-component";
+import ProgressBarComponent from "@/components/About/ProgressBarComponent.vue";
+import TimelineComponent from "@/components/About/TimelineComponent.vue";
+
+@Options({
+  components: {
+    ProgressBarComponent,
+    TimelineComponent,
+  },
+})
+export default class ModalAboutComponent extends Vue { }
 </script>
 
 <style scoped>
@@ -163,6 +164,12 @@ export default {
 
 body {
   max-height: 100vh;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*body {

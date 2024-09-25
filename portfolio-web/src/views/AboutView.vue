@@ -1,19 +1,12 @@
 <template>
-  <main class="d-flex align-items-center mt-5 my-auto">
+  <main class="min-vh-100 d-flex align-items-center my-auto">
     <div class="container-fluid container-sm my-4">
       <div class="row">
         <div class="col-lg-5 text-center">
-          <img
-            src="@/assets/eu.jpeg"
-            class="rounded-5"
-            style="width: 300px; height: 300px"
-            alt=""
-          />
+          <img src="@/assets/eu.jpeg" class="rounded-5" style="width: 300px; height: 300px" alt="" />
         </div>
 
-        <div
-          class="col-lg-6 mt-lg-0 mt-5 align-items-center text-lg-start text-center me-1"
-        >
+        <div class="col-lg-6 mt-lg-0 mt-5 align-items-center text-lg-start text-center me-1">
           <h1 class="text-uppercase nome mb-2">
             Pedro <span class="sobrenome">Sousa</span>
           </h1>
@@ -26,17 +19,12 @@
             Word e Excel.
           </p>
 
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Saiba mais!
           </button>
 
           <!-- Modal -->
-          <AboutModalController />
+          <ModalAboutComponent />
         </div>
       </div>
     </div>
@@ -45,14 +33,14 @@
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import AboutModalController from "@/components/About/ModalAboutController";
+import ModalAboutComponent from "@/components/About/ModalAboutComponent.vue";
 
 @Options({
   components: {
-    AboutModalController,
+    ModalAboutComponent,
   },
 })
-export default class AboutView extends Vue {}
+export default class AboutView extends Vue { }
 </script>
 
 <style scoped>

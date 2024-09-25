@@ -1,97 +1,100 @@
 <template>
-  <main class=" ">
-    <div class="container mb-5">
-      <h2 class="nome text-uppercase">
-        Entre em <span class="texto-azul">Contato</span>
-      </h2>
-      <hr />
-    </div>
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-12 col-lg-5">
-          <div class="rounded-2 py-1 mb-4">
-            <p class="mb-1">
-              <span class=""><i class="bi bi-whatsapp me-2"></i></span>
-              WhatsApp
-            </p>
-          </div>
-          <hr />
+  <div>
+    <main class="min-vh-100 d-flex flex-column justify-content-center">
+      <div class="d-flex container mb-5 mt-5">
+        <h2 class="nome text-uppercase">
+          Entre em <span class="texto-azul">Contato</span>
+        </h2>
+        <hr />
+      </div>
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-12 col-lg-5">
+            <div class="rounded-2 py-1 mb-4 d-flex">
+              <p class="mb-1">
+                <span><i class="bi bi-whatsapp me-2"></i></span>
+                WhatsApp
+              </p>
+            </div>
+            <hr />
 
-          <div class="rounded-2 py-1 mb-4">
-            <p class="mb-1">
-              <span class=""><i class="bi bi-telephone-fill me-2"></i></span>
-              Telefone
-            </p>
+            <div class="rounded-2 py-1 mb-4 d-flex">
+              <p class="mb-1">
+                <span><i class="bi bi-telephone-fill me-2"></i></span>
+                Telefone
+              </p>
+            </div>
+            <hr />
+            <div class="rounded-2 py-1 mb-4 d-flex">
+              <p class="mb-1">
+                <span><i class="bi bi-envelope-fill me-2"></i></span>
+                E-Mail
+              </p>
+            </div>
+            <hr />
+            <div class="rounded-2 py-1 mb-4 d-flex">
+              <p class="mb-1">
+                <span><i class="bi bi-github me-2"></i></span>
+                GitHub
+              </p>
+            </div>
+            <hr />
+            <div class="rounded-2 py-1 mb-4 mb-md-0 d-flex">
+              <p class="mb-1">
+                <span><i class="bi bi-linkedin me-2"></i></span>
+                LinkedIn
+              </p>
+            </div>
           </div>
-          <hr />
-          <div class="rounded-2 py-1 mb-4">
-            <p class="mb-1">
-              <span class=""><i class="bi bi-envelope-fill me-2"></i></span>
-              E-Mail
-            </p>
-          </div>
-          <hr />
-          <div class="rounded-2 py-1 mb-4">
-            <p class="mb-1">
-              <span class=""><i class="bi bi-github me-2"></i></span>
-              GitHub
-            </p>
-          </div>
-          <hr />
-          <div class="rounded-2 py-1 mb-4">
-            <p class="mb-1">
-              <span class=""><i class="bi bi-linkedin me-2"></i></span>
-              LinkedIn
-            </p>
-          </div>
-        </div>
-        <div class="col-7">
-          <div class="row p-2 rounded-2 mb-5">
-            <div class="col-12 col-lg-6">
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >Nome</label
-                >
-                <input
-                  type="email"
+          <div class="col-12 col-lg-7">
+            <div class="row p-2 rounded-2 mb-5">
+              <div class="col-12 col-lg-6">
+                <div class="mb-3 d-flex flex-column align-items-start">
+                  <label for="nameInput" class="form-label">Nome</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="nameInput"
+                    placeholder="name@example.com"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="mb-3 d-flex flex-column align-items-start">
+                  <label for="emailInput" class="form-label">E-Mail</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="emailInput"
+                    placeholder="name@example.com"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 d-flex flex-column align-items-start">
+                <label for="messageInput" class="form-label">Mensagem</label>
+                <textarea
                   class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
-                />
+                  id="messageInput"
+                  rows="3"
+                ></textarea>
               </div>
             </div>
-            <div class="col-12 col-lg-6">
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label"
-                  >E-Mail</label
-                >
-                <input
-                  type="email"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  placeholder="name@example.com"
-                />
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label"
-                >Mensagem</label
-              >
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
-              ></textarea>
+            <div class="d-flex">
+              <button class="btn btn-primary mb-md-5">Enviar</button>
             </div>
           </div>
-          <div><button class="btn btn-primary">Enviar</button></div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
+  </div>
 </template>
 
-<script lang="ts"></script>
+<script lang="ts">
+import { Options, Vue } from "vue-class-component";
+import NavbarComponent from "@/components/Home/NavbarComponent.vue";
+@Options({})
+export default class HomeView extends Vue {}
+</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");

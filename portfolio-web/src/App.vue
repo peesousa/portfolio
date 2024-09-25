@@ -6,7 +6,7 @@
   <!--   <router-link to="/teste">Teste</router-link> -->
   <!-- </nav> -->
   <!-- <router-view /> -->
-  <div class="d-flex justify-content-center align-items-center mt-5 my-auto">
+  <div>
     <router-view />
   </div>
 </template>
