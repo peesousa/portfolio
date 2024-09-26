@@ -9,7 +9,8 @@
       </div>
       <div class="container">
         <div class="row g-5">
-          <div class="col-12 col-lg-5">
+          <div class="col-lg-1"></div>
+          <div class="col-12 col-lg-4">
             <div class="rounded-2 py-1 mb-4 d-flex">
               <p class="mb-1">
                 <span><i class="bi bi-whatsapp me-2"></i></span>
@@ -25,6 +26,7 @@
               </p>
             </div>
             <hr />
+
             <div class="rounded-2 py-1 mb-4 d-flex">
               <p class="mb-1">
                 <span><i class="bi bi-envelope-fill me-2"></i></span>
@@ -32,6 +34,7 @@
               </p>
             </div>
             <hr />
+
             <div class="rounded-2 py-1 mb-4 d-flex">
               <p class="mb-1">
                 <span><i class="bi bi-github me-2"></i></span>
@@ -39,6 +42,7 @@
               </p>
             </div>
             <hr />
+
             <div class="rounded-2 py-1 mb-4 mb-md-0 d-flex">
               <p class="mb-1">
                 <span><i class="bi bi-linkedin me-2"></i></span>
@@ -46,43 +50,30 @@
               </p>
             </div>
           </div>
-          <div class="col-12 col-lg-7">
+          <div class="col-12 col-lg-6">
             <div class="row p-2 rounded-2 mb-5">
               <div class="col-12 col-lg-6">
                 <div class="mb-3 d-flex flex-column align-items-start">
                   <label for="nameInput" class="form-label">Nome</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="nameInput"
-                    placeholder="name@example.com"
-                  />
+                  <input type="text" class="form-control" id="nameInput" />
                 </div>
               </div>
               <div class="col-12 col-lg-6">
                 <div class="mb-3 d-flex flex-column align-items-start">
                   <label for="emailInput" class="form-label">E-Mail</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="emailInput"
-                    placeholder="name@example.com"
-                  />
+                  <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" />
                 </div>
               </div>
               <div class="mb-3 d-flex flex-column align-items-start">
                 <label for="messageInput" class="form-label">Mensagem</label>
-                <textarea
-                  class="form-control"
-                  id="messageInput"
-                  rows="3"
-                ></textarea>
+                <textarea class="form-control" id="messageInput" rows="3"></textarea>
               </div>
             </div>
             <div class="d-flex">
               <button class="btn btn-primary mb-md-5">Enviar</button>
             </div>
           </div>
+          <div class="col-lg-1"></div>
         </div>
       </div>
     </main>
@@ -93,7 +84,7 @@
 import { Options, Vue } from "vue-class-component";
 import NavbarComponent from "@/components/Home/NavbarComponent.vue";
 @Options({})
-export default class HomeView extends Vue {}
+export default class HomeView extends Vue { }
 </script>
 
 <style scoped>

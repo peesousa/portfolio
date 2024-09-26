@@ -19,7 +19,7 @@ export default class HomeView extends Vue {}
 
 <template>
   <div>
-    <main class="min-vh-100 d-flex align-items-center text-center vermelho">
+    <main class="min-vh-100 fixed-top z-n1 d-flex align-items-center text-center vermelho">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -31,11 +31,8 @@ export default class HomeView extends Vue {}
               <span>Back-end</span>
             </h2>
             <div>
-              <router-link
-                to="/contato"
-                class="btn botao btn-primary rounded-5 py-2 px-5 my-4"
-                >Entre em Contato</router-link
-              >
+              <router-link to="/contato" class="btn botao btn-primary rounded-5 py-2 px-5 my-4">Entre em
+                Contato</router-link>
             </div>
           </div>
         </div>
@@ -48,7 +45,7 @@ export default class HomeView extends Vue {}
 import { Options, Vue } from "vue-class-component";
 import NavbarComponent from "@/components/Home/NavbarComponent.vue";
 @Options({})
-export default class HomeView extends Vue {}
+export default class HomeView extends Vue { }
 </script>
 
 <style scoped>

@@ -1,49 +1,28 @@
 <template>
-  <nav class="navbar my-4 fixed-top navbar-expand-lg navbar-dark">
+  <nav class="navbar my-4 navbar-custom-fixed navbar-expand-lg navbar-dark">
     <div class="container-lg container-fluid">
       <router-link to="/" class="navbar-brand">PS</router-link>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasNavbar"
-        aria-controls="offcanvasNavbar"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="offcanvas offcanvas-end"
-        tabindex="-1"
-        id="offcanvasNavbar"
-        aria-labelledby="offcanvasNavbarLabel"
-      >
+      <div class="offcanvas offcanvas-end bg-dark" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-          <button
-            type="button"
-            class="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-          <ul
-            class="navbar-nav nav-underline justify-content-end flex-grow-1 pe-3 ms-auto"
-          >
+          <ul class="navbar-nav nav-underline justify-content-end flex-grow-1 pe-3 ms-auto">
             <li class="nav-item">
               <router-link to="/" class="nav-link">Home</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" to="/sobre-mim"
-                >Sobre mim</router-link
-              >
+              <router-link class="nav-link" to="/sobre-mim">Sobre mim</router-link>
             </li>
 
             <li class="nav-item">
-              <router-link class="nav-link" to="/portfolio"
-                >Portfólio</router-link
-              >
+              <router-link class="nav-link" to="/portfolio">Portfólio</router-link>
             </li>
             <li class="nav-item">
               <router-link class="nav-link" to="/blog">Blog</router-link>
@@ -79,6 +58,19 @@ body {
   filter: blur;
 }
 */
+
+.navbar-custom-fixed {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  .navbar-custom-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+  }
+}
 
 margin-helper {
   margin-top: 1000px;

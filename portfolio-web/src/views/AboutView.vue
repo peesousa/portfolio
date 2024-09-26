@@ -1,5 +1,5 @@
 <template>
-  <main class="min-vh-100 d-flex align-items-center my-auto">
+  <main class="min-vh-100 d-flex mt-5 mt-lg-0 align-items-center my-auto">
     <div class="container-fluid container-sm my-4">
       <div class="row">
         <div class="col-lg-5 text-center">
@@ -19,7 +19,8 @@
             Word e Excel.
           </p>
 
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="btn btn-primary mb-5 mb-lg-0" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
             Saiba mais!
           </button>
 

@@ -1,74 +1,15 @@
 <template>
-  <div>
-    <div class="d-flex align-items center justify-content-center">
-      <div class="row">
-        <div class="col-4">
-          <p class="text-center">Spring Boot</p>
-          <div class="progress blue">
-            <span class="progress-left">
-              <span class="progress-bar"></span>
-            </span>
-            <span class="progress-right">
-              <span class="progress-bar"></span>
-            </span>
-            <div class="progress-value">90%</div>
-          </div>
-        </div>
-
-        <div class="col-4">
-          <p class="text-center">Laravel</p>
-          <div class="progress yellow">
-            <span class="progress-left">
-              <span class="progress-bar"></span>
-            </span>
-            <span class="progress-right">
-              <span class="progress-bar"></span>
-            </span>
-            <div class="progress-value">37.5%</div>
-          </div>
-        </div>
-
-        <div class="col-4">
-          <p class="text-center">TypeScript</p>
-          <div class="progress yellow">
-            <span class="progress-left">
-              <span class="progress-bar"></span>
-            </span>
-            <span class="progress-right">
-              <span class="progress-bar"></span>
-            </span>
-            <div class="progress-value">37.5%</div>
-          </div>
-        </div>
+  <div class="row">
+    <div v-for="(tecnologia, index) in tecnologias" :key="index" class="mb-4 col-6">
+      <div>
+        <p>
+          {{ tecnologia.name }}
+        </p>
       </div>
-    </div>
-
-    <div class="mt-4 d-flex align-items center justify-content-center">
-      <div class="row">
-        <div class="col-6">
-          <p class="text-center">Angular</p>
-          <div class="progress blue">
-            <span class="progress-left">
-              <span class="progress-bar"></span>
-            </span>
-            <span class="progress-right">
-              <span class="progress-bar"></span>
-            </span>
-            <div class="progress-value">90%</div>
-          </div>
-        </div>
-
-        <div class="col-6">
-          <p class="text-center">Vue.Js</p>
-          <div class="progress yellow">
-            <span class="progress-left">
-              <span class="progress-bar"></span>
-            </span>
-            <span class="progress-right">
-              <span class="progress-bar"></span>
-            </span>
-            <div class="progress-value">37.5%</div>
-          </div>
+      <div class="progress rounded-1 bg-grey">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-blue" role="progressbar"
+          :style="{ width: tecnologia.progress + '%' }" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+          {{ tecnologia.progress }}%
         </div>
       </div>
     </div>
@@ -78,141 +19,26 @@
 <script>
 export default {
   name: "ProgressBarComponent",
+  data() {
+    return {
+      tecnologias: [
+        { name: "Spring Boot", progress: 90 },
+        { name: "Laravel", progress: 25 },
+        { name: "Js / Ts", progress: 10 },
+        { name: "Angular", progress: 50 },
+        { name: "Vue.Js", progress: 100 },
+      ],
+    };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.progress {
-  width: 100px;
-  height: 100px !important;
-  float: left;
-  line-height: 150px;
-  background: none;
-  box-shadow: none;
-  position: relative;
+.bg-blue {
+  background-color: #4169e1;
 }
 
-.progress:after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 12px solid #000;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.progress>span {
-  width: 50%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-
-.progress .progress-left {
-  left: 0;
-}
-
-.progress .progress-bar {
-  width: 100%;
-  height: 100%;
-  background: none;
-  border-width: 12px;
-  border-style: solid;
-  position: absolute;
-  top: 0;
-}
-
-.progress .progress-left .progress-bar {
-  left: 100%;
-  border-top-right-radius: 80px;
-  border-bottom-right-radius: 80px;
-  border-left: 0;
-  -webkit-transform-origin: center left;
-  transform-origin: center left;
-}
-
-.progress .progress-right {
-  right: 0;
-}
-
-.progress .progress-right .progress-bar {
-  left: -100%;
-  border-top-left-radius: 80px;
-  border-bottom-left-radius: 80px;
-  border-right: 0;
-  -webkit-transform-origin: center right;
-  transform-origin: center right;
-  animation: loading-1 1.8s linear forwards;
-}
-
-.progress .progress-value {
-  width: 90%;
-  height: 90%;
-  border-radius: 50%;
-  font-size: 16px;
-  line-height: 100px;
-  text-align: center;
-  position: absolute;
-  left: 5%;
-}
-
-.progress.blue .progress-bar {
-  border-color: #4169e1;
-}
-
-.progress.blue .progress-left .progress-bar {
-  animation: loading-2 1.5s linear forwards 1.8s;
-}
-
-.progress.yellow .progress-bar {
-  border-color: #4169e1;
-}
-
-.progress.yellow .progress-right .progress-bar {
-  animation: loading-3 1.8s linear forwards;
-}
-
-.progress.yellow .progress-left .progress-bar {
-  animation: none;
-}
-
-@keyframes loading-1 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-}
-
-@keyframes loading-2 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(144deg);
-    transform: rotate(144deg);
-  }
-}
-
-@keyframes loading-3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg);
-  }
+.bg-grey {
+  background-color: #939597;
 }
 </style>

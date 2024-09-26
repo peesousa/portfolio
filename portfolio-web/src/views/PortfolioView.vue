@@ -7,8 +7,9 @@
         </h2>
         <hr />
       </div>
-      <div class="container">
-        <div class="container">
+      <div class="container row">
+        <div class="col-lg-3"></div>
+        <div class="container col-lg-9">
           <div id="carouselExampleIndicators" class="carousel slide">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -20,13 +21,13 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="@/assets/eu.jpeg" class="d-block imagens" alt="..." />
+                <img src="@/assets/eu.jpeg" class="d-lg-block imagens" alt="..." />
               </div>
               <div class="carousel-item">
-                <img src="@/assets/eu.jpeg" class="d-block imagens" alt="..." />
+                <img src="@/assets/eu.jpeg" class="d-lg-block imagens" alt="..." />
               </div>
               <div class="carousel-item">
-                <img src="@/assets/eu.jpeg" class="d-block imagens" alt="..." />
+                <img src="@/assets/eu.jpeg" class="d-lg-block imagens" alt="..." />
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
