@@ -1,55 +1,41 @@
 <template>
-  <div class="">
-    <main class="mt-5 d-flex flex-column justify-content-center">
-      <div class="d-flex container mb-5 mt-5">
-        <h2 class="nome text-uppercase">
-          Meu <span class="texto-azul">Portfólio</span>
-        </h2>
-        <hr />
+  <main class="">
+    <div class="mb-5 mt-5 container col-10 text-start">
+      <h2 class="nome text-uppercase" v-if="$i18n.locale === 'pt_BR'">
+        {{ $t("portfolioPageContent.title1") }}
+        <span class="texto-azul">{{ $t("portfolioPageContent.title2") }} </span>
+      </h2>
+      <h2 class="nome text-uppercase" v-else>
+        {{ $t("portfolioPageContent.title1") }}
+        <span class="texto-azul">{{ $t("portfolioPageContent.title2") }} </span>
+      </h2>
+      <hr />
+    </div>
+
+    <div class="container mt-4 col-10">
+      <div class="row">
+        <CarouselComponent
+          :img="conteudoPortfolio.img"
+          :description="conteudoPortfolio.description"
+        />
       </div>
-      <div class="container row">
-        <div class="col-lg-3"></div>
-        <div class="container col-lg-9">
-          <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="@/assets/eu.jpeg" class="d-lg-block imagens" alt="..." />
-              </div>
-              <div class="carousel-item">
-                <img src="@/assets/eu.jpeg" class="d-lg-block imagens" alt="..." />
-              </div>
-              <div class="carousel-item">
-                <img src="@/assets/eu.jpeg" class="d-lg-block imagens" alt="..." />
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-              data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
+    </div>
+  </main>
 </template>
 
 <script>
+import CarouselComponent from "@/components/CarouselComponent";
 export default {
   name: "PortfolioView",
+  components: { CarouselComponent },
+  data() {
+    return {
+      conteudoPortfolio: {
+        img: "@/assets/eu.jpeg",
+        description: "Aqui está uma imagem minha",
+      },
+    };
+  },
 };
 </script>
 

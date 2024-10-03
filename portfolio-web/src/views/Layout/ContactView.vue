@@ -15,11 +15,7 @@
     <div class="container col-10">
       <div class="row justify-content-between">
         <div class="col-12 col-lg-5">
-          <div
-            class="rounded-2 py-1 mb-4 d-flex py-2 bg-dark"
-            v-for="(contact, index) in contacts"
-            :key="index"
-          >
+          <div class="rounded-2 py-1 mb-4 d-flex py-2 bg-dark" v-for="(contact, index) in contacts" :key="index">
             <p class="mb-1 texto-azul ms-3 mt-1">
               <span><i :class="`bi ${contact.icon} me-2`"></i></span>
               {{ contact.name }}
@@ -30,41 +26,23 @@
           <div class="row rounded-2 gy-4">
             <div class="col-12 col-lg-6">
               <div class="d-flex flex-column align-items-start">
-                <input
-                  type="text"
-                  style="height: 47px"
-                  class="form-control"
-                  id="nameInput"
-                  :placeholder="$t('contactPageContent.formName')"
-                />
+                <input type="text" style="height: 47px" class="form-control" id="nameInput"
+                  :placeholder="$t('contactPageContent.formName')" />
               </div>
             </div>
             <div class="col-12 col-lg-6">
               <div class="">
-                <input
-                  type="email"
-                  style="height: 47px"
-                  class="form-control"
-                  id="emailInput"
-                  :placeholder="$t('contactPageContent.formEmail')"
-                />
+                <input type="email" style="height: 47px" class="form-control" id="emailInput"
+                  :placeholder="$t('contactPageContent.formEmail')" />
               </div>
             </div>
             <div class="d-flex flex-column align-items-start">
-              <textarea
-                class="form-control"
-                style="height: 122px"
-                :placeholder="$t('contactPageContent.formMessage')"
-                id="messageInput"
-                rows="3"
-              ></textarea>
+              <textarea class="form-control" style="height: 122px" :placeholder="$t('contactPageContent.formMessage')"
+                id="messageInput" rows="3"></textarea>
             </div>
 
             <div class="text-start">
-              <button
-                class="btn btn-primary mb-md-5 rounded-5 px-5"
-                style="height: 47px"
-              >
+              <button class="btn btn-primary mb-md-5 rounded-5 px-5" style="height: 47px">
                 {{ $t("contactPageContent.button") }}
               </button>
             </div>
@@ -89,7 +67,7 @@ import { Options, Vue } from "vue-class-component";
     };
   },
 })
-export default class HomeView extends Vue {}
+export default class HomeView extends Vue { }
 </script>
 
 <style scoped>

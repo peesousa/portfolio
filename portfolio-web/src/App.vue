@@ -6,21 +6,25 @@
   <!--   <router-link to="/teste">Teste</router-link> -->
   <!-- </nav> -->
   <!-- <router-view /> -->
-  <div>
-    <router-view />
+  <div class="min-vh-100 container-fluid align-items-center d-flex">
+    <div class="row justify-content-center min-vw-100">
+      <div class="col-10">
+        <router-view />
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
-import NavbarComponent from "@/components/Home/NavbarComponent.vue";
+import NavbarComponent from "@/components/Navbar/NavbarComponent.vue";
 
 @Options({
   components: {
     NavbarComponent,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue { }
 </script>
 
 <style lang="scss">

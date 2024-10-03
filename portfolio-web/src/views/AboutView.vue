@@ -1,27 +1,25 @@
 <template>
-  <main class="min-vh-100 d-flex mt-5 mt-lg-0 align-items-center my-auto">
+  <!-- <main class="border min-vh-100 d-flex mt-5 mt-lg-0 align-items-center my-auto"> -->
+  <main class="col-10 container mb-5 mt-5">
     <div class="container-fluid container-sm my-4">
-      <div class="row">
-        <div class="col-lg-5 text-center">
-          <img src="@/assets/eu.jpeg" class="rounded-5" style="width: 300px; height: 300px" alt="" />
+      <div class="row d-flex align-items-center justify-content-between">
+        <div class="col-lg-5 text-start">
+          <img src="@/assets/eu.jpeg" class="rounded-3" style="width: 300px; height: 300px" alt="" />
         </div>
 
-        <div class="col-lg-6 mt-lg-0 mt-5 align-items-center text-lg-start text-center me-1">
-          <h1 class="text-uppercase nome mb-2">
+        <div class="col-lg-7 align-items-center text-lg-start text-center">
+          <h1 class="text-uppercase nome">
             Pedro <span class="sobrenome">Sousa</span>
           </h1>
+          <!-- <span>Desenvolvedor back-end</span> -->
           <hr />
-          <p class="fonte mb-5">
-            Graduando em Ciência da Computação pelo Instituto Federal de
-            Brasília. Possui conhecimento em Desenvolvimeto Full-Stack com
-            tecnologias como Laravel, Spring Boot, Angular e Vue.Js, além de
-            conhecimento em banco de dados SQL e ferramentas de escritório como
-            Word e Excel.
+          <p class="fonte">
+            {{ $t("aboutPageContent.summary") }}
           </p>
 
-          <button type="button" class="btn btn-primary mb-5 mb-lg-0" data-bs-toggle="modal"
+          <button type="button" class="btn btn-primary rounded-5 px-5 py-2 mt-4" data-bs-toggle="modal"
             data-bs-target="#exampleModal">
-            Saiba mais!
+            {{ $t("aboutPageContent.button") }}
           </button>
 
           <!-- Modal -->
@@ -80,7 +78,7 @@ margin-helper {
 
 .fonte {
   font-family: "Poppins";
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   color: #fff;
 }

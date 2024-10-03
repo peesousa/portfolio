@@ -14,25 +14,20 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav nav-underline justify-content-end flex-grow-1 pe-3 ms-auto">
-            <li class="nav-item">
-              <router-link to="/" class="nav-link">Home</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/sobre-mim">Sobre mim</router-link>
-            </li>
-
-            <li class="nav-item">
-              <router-link class="nav-link" to="/portfolio">Portfólio</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/blog">Blog</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/contato">Contato</router-link>
-            </li>
+            <div class="container-fluid d-flex justify-content-center">
+              <li class="nav-item" v-for="(link, index) in links" :key="index">
+                <router-link :to="`${link.link}`" class="nav-link">{{
+                  $t(`linkName.${link.name}`)
+                  }}</router-link>
+              </li>
+            </div>
           </ul>
         </div>
       </div>
+
+      <button @click="toggleFlag(flag)" class="navbar-brand btn p-0 rounded-5">
+        <img :src="require(`@/assets/flags/${flag}.png`)" style="width: 30px; height: 30px" alt="" />
+      </button>
     </div>
   </nav>
 </template>
@@ -40,10 +35,28 @@
 <script>
 export default {
   name: "NavbarComponent",
+  data() {
+    return {
+      flag: "pt_BR",
+      links: [
+        { name: "home", link: "/" },
+        { name: "about", link: "/sobre-mim" },
+        { name: "portfolio", link: "/portfolio" },
+        { name: "blog", link: "/blog" },
+        { name: "contact", link: "/contato" },
+      ],
+    };
+  },
+  methods: {
+    toggleFlag() {
+      this.flag = this.flag === "pt_BR" ? "en" : "pt_BR";
+      this.$i18n.locale = this.flag;
+    },
+  },
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
